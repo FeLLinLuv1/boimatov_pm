@@ -33,7 +33,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.delete_but = new System.Windows.Forms.Button();
-            this.redactor_but = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.new_but = new System.Windows.Forms.Button();
             this.exit_but = new System.Windows.Forms.Button();
@@ -90,15 +89,6 @@
             this.delete_but.Text = "Отозвать заявку";
             this.delete_but.UseVisualStyleBackColor = true;
             // 
-            // redactor_but
-            // 
-            this.redactor_but.Location = new System.Drawing.Point(85, 603);
-            this.redactor_but.Name = "redactor_but";
-            this.redactor_but.Size = new System.Drawing.Size(168, 38);
-            this.redactor_but.TabIndex = 5;
-            this.redactor_but.Text = "редактировать заявку";
-            this.redactor_but.UseVisualStyleBackColor = true;
-            // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -147,7 +137,6 @@
             this.Controls.Add(this.exit_but);
             this.Controls.Add(this.new_but);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.redactor_but);
             this.Controls.Add(this.delete_but);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
@@ -168,7 +157,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button delete_but;
-        private System.Windows.Forms.Button redactor_but;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button new_but;
         private System.Windows.Forms.Button exit_but;

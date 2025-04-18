@@ -51,6 +51,18 @@ namespace boimatov_pm
 
                     if (countUser > 0)
                     {
+                        database db = new database();
+                        int clientId = db.GetClientIdByLogin_sotr(login);
+
+                        if (clientId != -1)
+                        {
+                            DataBank.id_sotr = clientId;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Не удалось получить ID клиента.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
                         MessageBox.Show("Авторизация прошла успешно");
                         obrabotka obr = new obrabotka();
                         this.Hide();

@@ -128,6 +128,37 @@ namespace boimatov_pm
             return clientId;
         }
 
+        public int GetClientIdByLogin_sotr(string login)
+        {
+            int clientId = -1; // Значение по умолчанию, если ID не найден
+
+            OpenConnection();
+            try
+            {
+                string query = "SELECT id FROM workers WHERE login = @login";
+                using (NpgsqlCommand command = new NpgsqlCommand(query, getConnection()))
+                {
+                    command.Parameters.AddWithValue("@login", login);
+
+                    object result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        clientId = Convert.ToInt32(result);
+                    }
+                }
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show($"Ошибка при получении ID клиента: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return clientId;
+        }
+
         public int GetNapravleniyaIdByName(string napravleniyaName)
         {
             int napravleniyaId = -1; // Значение по умолчанию, если ID не найден

@@ -28,25 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.napravlenia_data = new System.Windows.Forms.DataGridView();
+            this.napravlenDataGridView = new System.Windows.Forms.DataGridView();
             this.readyNapr_but = new System.Windows.Forms.Button();
-            this.uroven_data = new System.Windows.Forms.DataGridView();
+            this.urovenDataGridView = new System.Windows.Forms.DataGridView();
             this.readyUroven_but = new System.Windows.Forms.Button();
             this.back_but = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.napravlenia_data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uroven_data)).BeginInit();
+            this.addNapravlenButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.napravlenDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.urovenDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // napravlenia_data
+            // napravlenDataGridView
             // 
-            this.napravlenia_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.napravlenia_data.Location = new System.Drawing.Point(12, 49);
-            this.napravlenia_data.Name = "napravlenia_data";
-            this.napravlenia_data.RowHeadersWidth = 51;
-            this.napravlenia_data.RowTemplate.Height = 24;
-            this.napravlenia_data.Size = new System.Drawing.Size(525, 442);
-            this.napravlenia_data.TabIndex = 0;
+            this.napravlenDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.napravlenDataGridView.Location = new System.Drawing.Point(12, 49);
+            this.napravlenDataGridView.Name = "napravlenDataGridView";
+            this.napravlenDataGridView.RowHeadersWidth = 51;
+            this.napravlenDataGridView.RowTemplate.Height = 24;
+            this.napravlenDataGridView.Size = new System.Drawing.Size(525, 442);
+            this.napravlenDataGridView.TabIndex = 0;
             // 
             // readyNapr_but
             // 
@@ -56,16 +58,17 @@
             this.readyNapr_but.TabIndex = 1;
             this.readyNapr_but.Text = "Сохранить направления";
             this.readyNapr_but.UseVisualStyleBackColor = true;
+            this.readyNapr_but.Click += new System.EventHandler(this.readyNapr_but_Click);
             // 
-            // uroven_data
+            // urovenDataGridView
             // 
-            this.uroven_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.uroven_data.Location = new System.Drawing.Point(543, 49);
-            this.uroven_data.Name = "uroven_data";
-            this.uroven_data.RowHeadersWidth = 51;
-            this.uroven_data.RowTemplate.Height = 24;
-            this.uroven_data.Size = new System.Drawing.Size(547, 442);
-            this.uroven_data.TabIndex = 2;
+            this.urovenDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.urovenDataGridView.Location = new System.Drawing.Point(543, 49);
+            this.urovenDataGridView.Name = "urovenDataGridView";
+            this.urovenDataGridView.RowHeadersWidth = 51;
+            this.urovenDataGridView.RowTemplate.Height = 24;
+            this.urovenDataGridView.Size = new System.Drawing.Size(547, 442);
+            this.urovenDataGridView.TabIndex = 2;
             // 
             // readyUroven_but
             // 
@@ -75,6 +78,7 @@
             this.readyUroven_but.TabIndex = 3;
             this.readyUroven_but.Text = "Сохранить уровень";
             this.readyUroven_but.UseVisualStyleBackColor = true;
+            this.readyUroven_but.Click += new System.EventHandler(this.readyUroven_but_Click);
             // 
             // back_but
             // 
@@ -84,6 +88,7 @@
             this.back_but.TabIndex = 4;
             this.back_but.Text = "Выйти";
             this.back_but.UseVisualStyleBackColor = true;
+            this.back_but.Click += new System.EventHandler(this.back_but_Click);
             // 
             // label1
             // 
@@ -95,21 +100,44 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Выберите необходимые данные для изменения (БУДЬТЕ ОСТОРОЖНЫ!!!)";
             // 
+            // addNapravlenButton
+            // 
+            this.addNapravlenButton.Location = new System.Drawing.Point(12, 513);
+            this.addNapravlenButton.Name = "addNapravlenButton";
+            this.addNapravlenButton.Size = new System.Drawing.Size(179, 43);
+            this.addNapravlenButton.TabIndex = 6;
+            this.addNapravlenButton.Text = "новая строка";
+            this.addNapravlenButton.UseVisualStyleBackColor = true;
+            this.addNapravlenButton.Click += new System.EventHandler(this.addNapravlenButton_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(652, 508);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(185, 48);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "новая строка";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // slughebnoe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1102, 631);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.addNapravlenButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.back_but);
             this.Controls.Add(this.readyUroven_but);
-            this.Controls.Add(this.uroven_data);
+            this.Controls.Add(this.urovenDataGridView);
             this.Controls.Add(this.readyNapr_but);
-            this.Controls.Add(this.napravlenia_data);
+            this.Controls.Add(this.napravlenDataGridView);
             this.Name = "slughebnoe";
             this.Text = "slughebnoe";
-            ((System.ComponentModel.ISupportInitialize)(this.napravlenia_data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uroven_data)).EndInit();
+            this.Load += new System.EventHandler(this.slughebnoe_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.napravlenDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.urovenDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,11 +145,13 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView napravlenia_data;
+        private System.Windows.Forms.DataGridView napravlenDataGridView;
         private System.Windows.Forms.Button readyNapr_but;
-        private System.Windows.Forms.DataGridView uroven_data;
+        private System.Windows.Forms.DataGridView urovenDataGridView;
         private System.Windows.Forms.Button readyUroven_but;
         private System.Windows.Forms.Button back_but;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button addNapravlenButton;
+        private System.Windows.Forms.Button button1;
     }
 }

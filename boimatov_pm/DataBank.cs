@@ -14,6 +14,8 @@ namespace boimatov_pm
 
         public static int id_pols;
 
+        public static int id_sotr;
+
 
     }
 }
